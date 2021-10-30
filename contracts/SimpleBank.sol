@@ -11,7 +11,6 @@ contract SimpleBank {
     /* State variables
      */
     
-    
     // Fill in the visibility keyword. 
     // Hint: We want to protect our users balance from other contracts
      mapping (address => uint) private balances ;
@@ -46,9 +45,10 @@ contract SimpleBank {
     // Typically, called when invalid data is sent
     // Added so ether sent to this contract is reverted if the contract fails
     // otherwise, the sender's money is transferred to contract
-    fallback () external payable{
-        revert();
+    fallback() external payable { 
+      revert(); 
     }
+
 
     /// @notice Get balance
     /// @return The balance of the user
@@ -71,7 +71,7 @@ contract SimpleBank {
 
     /// @notice Deposit ether into bank
     /// @return The balance of the user after the deposit is made
-    function deposit()  public payable  returns (uint) {
+    function deposit() public payable  returns (uint) {
       // 1. Add the appropriate keyword so that this function can receive ether
     require(enrolled[owner]);
     
