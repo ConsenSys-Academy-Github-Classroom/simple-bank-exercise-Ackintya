@@ -22,7 +22,7 @@ contract SimpleBank {
 
     // Let's make sure everyone knows who owns the bank, yes, fill in the
     // appropriate visilibility keyword
-    address  public  owner = msg.sender;
+    address public  owner = msg.sender;
     
     /* Events - publicize actions to external listeners
      */
@@ -100,7 +100,7 @@ contract SimpleBank {
       // return the user's balance.
       require(getBalance()>=withdrawAmount);
 
-      owner.transfer(withdrawAmount);
+      
       balances[owner]=balances[owner]-withdrawAmount;
 
       // 1. Use a require expression to guard/ensure sender has enough funds
